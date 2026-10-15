@@ -1,0 +1,21 @@
+# Example: run strava-sync next to Dreeve.
+# Adjust the watch path to the folder Dreeve imports from (IMPORT_MODE=files).
+services:
+  strava-sync:
+    build: .
+    container_name: strava-sync
+    restart: unless-stopped
+    # Must be able to write into Dreeve's watch folder; match the owner of that folder.
+    user: "1000:1000"
+    env_file: .env
+    environment:
+      SYNC_INTERVAL: "3600"
+      # BACKFILL_SINCE: "2025-01-01"
+      MAX_DOWNLOADS_PER_RUN: "50"
+      DOWNLOAD_DELAY: "3"
+    volumes:
+      - ./dreeve/storage/files/watch:/watch
+      - strava-sync-state:/state
+
+volumes:
+  strava-sync-state:
