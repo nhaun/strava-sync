@@ -1,0 +1,25 @@
+tests/test_session.py
+  s_0c1e91198f1377::t_4a32258d0c540a 35-40,42-44
+  s_0c1e91198f1377::t_91599a6692673f 41
+strava_sync/session.py
+  s_0c1e91198f1377::t_c613322f7ec6db 57-58
+  s_0c1e91198f1377::t_48c1b2c30f2df1 38-45,47
+README.md
+  s_0c1e91198f1377::t_52ce56325d9946 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bd483cbf5310a28a79c129b0b1fa17b4fbca0370",
+  "prompts": {},
+  "sessions": {
+    "s_0c1e91198f1377": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "5bd1ea92-33a9-4af8-91dc-60a554fe577b",
+        "model": "unknown"
+      },
+      "human_author": "Niklas Haun <niklas.haun@telekom.de>"
+    }
+  }
+}
