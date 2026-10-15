@@ -25,7 +25,7 @@ Datei in einem Ordner ablegt, z. B. im `watch/`-Ordner von Dreeve (`IMPORT_MODE=
 2. Die DevTools öffnen (F12):
    - Chrome/Edge: *Application → Cookies → https://www.strava.com*
    - Firefox: *Web-Speicher → Cookies*
-3. Den Wert des Cookies **`strava_remember_token`** kopieren. Er beginnt mit `eyJ…`.
+3. Den Wert des Cookies **`strava_remember_token`** kopieren. Er beginnt mit `eyJ…` und besteht aus drei durch Punkte getrennten Teilen (`xxx.yyy.zzz`). Kopiere den kompletten Rohwert aus der Spalte „Value“, nicht die einzelnen Einträge der geparsten Ansicht, die z. B. Firefox als Array mit drei Einträgen anzeigt.
 4. **Nicht abmelden.** Das Browserfenster einfach schließen, denn ein Logout macht das Token ungültig.
 
 Wann das Token abläuft, zeigt der Payload des JWT (Feld `exp`), z. B. per

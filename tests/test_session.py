@@ -32,6 +32,16 @@ def test_parse_remember_token_malformed(token):
         parse_remember_token(token)
 
 
+def test_parse_remember_token_without_dots_explains_jwt_format():
+    with pytest.raises(AuthExpiredError, match=r"3 dot-separated parts.*found 1"):
+        parse_remember_token("eyJhbGciOiJIUzI1NiJ9")
+
+
+def test_parse_remember_token_strips_whitespace_and_quotes():
+    token = make_jwt(sub=42, exp=2_000_000_000)
+    assert parse_remember_token(f' "{token}"\n') == ("42", 2_000_000_000)
+
+
 def test_expired_token_rejected_before_any_request():
     calls = []
     transport = httpx.MockTransport(lambda r: calls.append(r) or httpx.Response(500))

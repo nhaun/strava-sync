@@ -35,8 +35,16 @@ class NotFoundError(StravaError):
 
 def parse_remember_token(token: str) -> tuple[str, int]:
     """Return (athlete web id, expiry unix timestamp) from the JWT payload (signature is not verified)."""
+    token = token.strip().strip("\"'")
+    parts = token.split(".")
+    if len(parts) != 3:
+        raise AuthExpiredError(
+            "strava_remember_token is malformed: expected a JWT with 3 dot-separated parts "
+            f"(header.payload.signature), found {len(parts)}. Copy the complete raw cookie value, "
+            "not a single entry of the browser's parsed view."
+        )
     try:
-        payload = token.split(".")[1]
+        payload = parts[1]
         payload += "=" * (-len(payload) % 4)
         data = json.loads(base64.urlsafe_b64decode(payload))
         return str(data["sub"]), int(data["exp"])
@@ -46,8 +54,8 @@ def parse_remember_token(token: str) -> tuple[str, int]:
 
 class StravaSession:
     def __init__(self, remember_token: str, transport: httpx.BaseTransport | None = None, timeout: float = 60):
-        self._token = remember_token
-        self.athlete_id, self._expires = parse_remember_token(remember_token)
+        self._token = remember_token.strip().strip("\"'")
+        self.athlete_id, self._expires = parse_remember_token(self._token)
         self._client = httpx.Client(
             base_url=BASE_URL,
             transport=transport,
