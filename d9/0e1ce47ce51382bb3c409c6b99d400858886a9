@@ -1,0 +1,58 @@
+strava_sync/lister.py
+  s_0c1e91198f1377::t_6694ccb56b4148 60-61,64,69
+  s_0c1e91198f1377::t_2bec28a2b64586 1-59,62-63,65-68,70-72
+tests/test_config.py
+  s_0c1e91198f1377::t_c06b8401be6fe5 1-58
+pyproject.toml
+  s_0c1e91198f1377::t_5fe50c70f56ec0 1-22
+.gitignore
+  s_0c1e91198f1377::t_85162a2b8b6ced 1-7
+tests/test_lister.py
+  s_0c1e91198f1377::t_e450d573f6ea15 1-73
+strava_sync/config.py
+  s_0c1e91198f1377::t_e2b4b07c2a83fc 1-57
+Dockerfile
+  s_0c1e91198f1377::t_bc23a58248e15f 1-24
+tests/test_state.py
+  s_0c1e91198f1377::t_2f3c26dd523b32 1-53
+README.md
+  s_0c1e91198f1377::t_5623b71aa8a52a 1-3,5-84
+  s_0c1e91198f1377::t_ad9f1ee83e780c 4
+docker-compose.example.yml
+  s_0c1e91198f1377::t_eb995f203f38d4 1-21
+tests/test_main.py
+  s_0c1e91198f1377::t_af008516775cb8 1-144
+strava_sync/downloader.py
+  s_0c1e91198f1377::t_481b6a01a9ef9c 1-70
+strava_sync/state.py
+  s_0c1e91198f1377::t_314807b76e592d 1-83
+strava_sync/session.py
+  s_0c1e91198f1377::t_f5b1a650796bc2 73-76
+  s_0c1e91198f1377::t_5ffb1bcde6893a 104-106
+  s_0c1e91198f1377::t_fc9092339a5b42 32-35
+  s_0c1e91198f1377::t_e96ecc47312b06 1-31,36-72,77-103,107-112
+tests/test_downloader.py
+  s_0c1e91198f1377::t_22c64e26f3cacd 1-104
+strava_sync/main.py
+  s_0c1e91198f1377::t_ef45053e3b293f 1-134
+.dockerignore
+  s_0c1e91198f1377::t_3005faa4f29854 1-9
+tests/test_session.py
+  s_0c1e91198f1377::t_7cd54e2841027c 1-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d90e1ce47ce51382bb3c409c6b99d400858886a9",
+  "prompts": {},
+  "sessions": {
+    "s_0c1e91198f1377": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "5bd1ea92-33a9-4af8-91dc-60a554fe577b",
+        "model": "unknown"
+      },
+      "human_author": "Niklas Haun <niklas.haun@telekom.de>"
+    }
+  }
+}
